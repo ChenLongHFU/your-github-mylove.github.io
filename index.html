@@ -21,8 +21,8 @@
       }
 
       #myCarousel {
-        width: 50%;
-        height: 100%;
+        width: 25%;
+        
       }
 
       html,
@@ -30,7 +30,7 @@
         height: 100%;
         padding: 0;
         margin: 0;
-        background: rgb(59, 4, 103);
+        background: rgb(0, 0, 0);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -160,10 +160,10 @@
           "Now is : " + h + ":" + m + ":" + s;
         document.getElementById("getday").innerHTML =
           "Today is : " + dd + "/" + MM + "/" + yyyy;
-        document.getElementById("loveDays").innerHTML =
-          "Love you " +
-          get_day_of_time(new Date("2020-09-13"), new Date()) +
-          " days";
+//         document.getElementById("loveDays").innerHTML =
+//           "Love you " +
+//           get_day_of_time(new Date("2020-09-13"), new Date()) +
+//           " days";
         /*BƯỚC 1: GIẢM PHÚT XUỐNG 1 GIÂY VÀ GỌI LẠI SAU 1 GIÂY */
         timeout = setTimeout(function () {
           start();
