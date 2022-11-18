@@ -8,12 +8,17 @@
     <meta name="Description" content="" />
 
     <style>
+      span {
+        border: solid 1px #acacac;
+        padding: 2px;
+      }
+
       html,
       body {
         height: 100%;
         padding: 0;
         margin: 0;
-        background: #000;
+        background: rgb(59, 4, 103);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -67,6 +72,15 @@
         transform-origin: 100% 100%;
       }
 
+      #gettimer {
+        color: ff5ca4;
+        font-size: large;
+      }
+      #getday {
+        color: ff5ca4;
+        font-size: large;
+      }
+
       @keyframes animate {
         0% {
           transform: scale(1);
@@ -84,10 +98,10 @@
     </style>
   </head>
 
-  <body>
+  <body onload="start()">
     <div class="box">
       <canvas id="pinkboard"></canvas>
-      <center style="opacity: 0.5">
+      <center style="opacity: 0.5; margin-bottom: 0.8%">
         <audio controls autoplay style="background: white">
           <source
             src="/your-github-mylove.github.io/Co-Em-Cho-MIN-Mr-A.mp3"
@@ -96,7 +110,45 @@
           Your browser does not support the audio element.
         </audio>
       </center>
+      <center>
+        <div>
+          <span id="gettimer"></span>
+          <span id="getday"></span>
+        </div>
+      </center>
     </div>
+    <script language="javascript">
+      function start() {
+        // khai báo biến thời gian.
+        var today = new Date();
+        // khởi tạo biến lấy Giờ, phút, giây hiện tại
+        var h = today.getHours();
+        var m = today.getMinutes();
+        var s = today.getSeconds();
+
+        var dd = String(today.getDate()).padStart(2, "0");
+        var MM = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
+        var yyyy = today.getFullYear();
+        document.getElementById("gettimer").innerHTML =
+          "Now is : " + h + ":" + m + ":" + s;
+        document.getElementById("getday").innerHTML =
+          "Today is : " + dd + "/" + MM + "/" + yyyy;
+        document.getElementById("loveDays").innerHTML =
+          "Love you " +
+          get_day_of_time(new Date("2020-09-13"), new Date()) +
+          " days";
+        /*BƯỚC 1: GIẢM PHÚT XUỐNG 1 GIÂY VÀ GỌI LẠI SAU 1 GIÂY */
+        timeout = setTimeout(function () {
+          start();
+        }, 1000);
+      }
+
+      const get_day_of_time = (d1, d2) => {
+        let ms1 = d1.getTime();
+        let ms2 = d2.getTime();
+        return Math.ceil((ms2 - ms1) / (24 * 60 * 60 * 1000));
+      };
+    </script>
     <script>
       /*
        * Settings
@@ -379,6 +431,7 @@
       style="width: 25%"
     />
     <div
+      id="loveDays"
       class="center-text"
       ,
       style="
@@ -394,9 +447,7 @@
         margin-bottom: 5px;
         text-align: center;
       "
-    >
-      Love you Forever! 26m
-    </div>
+    ></div>
     <img
       src="https://scontent.fhan3-5.fna.fbcdn.net/v/t39.30808-6/243364099_1012270959627481_427126345427539479_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=KGfoopVHf-UAX_UswAL&_nc_ht=scontent.fhan3-5.fna&oh=00_AfBMxCW4M8-EIl08iWOqqhds3teRGeYakC5tj_Mym9zCTQ&oe=637C5C34"
       style="width: 25%"
