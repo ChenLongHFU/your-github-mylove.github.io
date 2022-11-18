@@ -6,7 +6,7 @@
     <meta name="Author" content="" />
     <meta name="Keywords" content="" />
     <meta name="Description" content="" />
-    
+
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
@@ -35,7 +35,7 @@
       }
 
       .box {
-        width: 50%;
+        width: 100%;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -52,7 +52,7 @@
       #pinkboard {
         position: relative;
         margin: auto;
-        height: 00px;
+        height: 500px;
         width: 500px;
         animation: animate 1.3s infinite;
       }
@@ -120,12 +120,12 @@
           Your browser does not support the audio element.
         </audio>
       </center>
-      <!--       <center>
+            <center>
         <div>
           <span id="gettimer"></span>
           <span id="getday"></span>
         </div>
-      </center> -->
+      </center>
     </div>
 
     <script language="javascript">
@@ -158,10 +158,10 @@
           "Now is : " + h + ":" + m + ":" + s;
         document.getElementById("getday").innerHTML =
           "Today is : " + dd + "/" + MM + "/" + yyyy;
-        //         document.getElementById("loveDays").innerHTML =
-        //           "Love you " +
-        //           get_day_of_time(new Date("2020-09-13"), new Date()) +
-        //           " days";
+                document.getElementById("loveDays").innerHTML =
+                  "Love you " +
+                  get_day_of_time(new Date("2020-09-13"), new Date()) +
+                  " days";
         /*BƯỚC 1: GIẢM PHÚT XUỐNG 1 GIÂY VÀ GỌI LẠI SAU 1 GIÂY */
         timeout = setTimeout(function () {
           start();
